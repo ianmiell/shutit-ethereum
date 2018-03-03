@@ -108,11 +108,9 @@ echo "
 		shutit.login(command='vagrant ssh ' + sorted(machines.keys())[0],check_sudo=False)
 		shutit.login(command='sudo su -',password='vagrant',check_sudo=False)
 		shutit.install('npm')
-		shutit.send('npm install -g ethereumjs-testrpc')
-
-		shutit.pause_point('')
-#testrpc?
-#npm install -g truffle
+		shutit.send('npm -q install -g ethereumjs-testrpc')
+		shutit.send('npm -q install -g truffle')
+		shutit.pause_point('testrpc?')
 #mkdir solidity-experiments
 #cd solidity-experiments
 #truffle init
